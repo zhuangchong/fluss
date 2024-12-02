@@ -196,11 +196,11 @@ public class FlussAdmin implements Admin {
             TablePath fromTablePath, TablePath toTablePath, boolean ignoreIfNotExists) {
         RenameTableRequest request = new RenameTableRequest();
         request.setIgnoreIfNotExists(ignoreIfNotExists)
-                .setTablePath(
+                .setFromTablePath(
                         new PbTablePath()
                                 .setDatabaseName(fromTablePath.getDatabaseName())
                                 .setTableName(fromTablePath.getTableName()))
-                .setNewTablePath()
+                .setToTablePath()
                 .setDatabaseName(toTablePath.getDatabaseName())
                 .setTableName(toTablePath.getTableName());
         return gateway.renameTable(request).thenApply(r -> null);

@@ -119,8 +119,8 @@ message DropTableResponse {
 
 // rename table request and response
 message RenameTableRequest {
-  required PbTablePath table_path = 1;
-  required PbTablePath new_table_path = 2;
+  required PbTablePath from_table_path = 1;
+  required PbTablePath to_table_path = 2;
   required bool ignore_if_not_exists = 3;
 }
 

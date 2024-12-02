@@ -214,8 +214,8 @@ public final class CoordinatorService extends RpcServiceBase implements Coordina
     public CompletableFuture<RenameTableResponse> renameTable(RenameTableRequest request) {
         RenameTableResponse response = new RenameTableResponse();
         metadataManager.renameTable(
-                toTablePath(request.getTablePath()),
-                toTablePath(request.getNewTablePath()),
+                toTablePath(request.getFromTablePath()),
+                toTablePath(request.getToTablePath()),
                 request.isIgnoreIfNotExists());
         return CompletableFuture.completedFuture(response);
     }
